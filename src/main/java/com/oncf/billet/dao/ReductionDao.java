@@ -15,6 +15,6 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface ReductionDao extends JpaRepository<Reduction,Long> {
-    public Reduction findByRefReduction(String refReduction);
+    public Reduction findByRefReduction(String  refReduction);
     
 }

@@ -37,6 +37,11 @@ public class ReservationServiceImpl implements ReservationService {
     public List<Reservation> findByClientCin(String cin) {
         return reservationDao.findByClientCin(cin);
     }
+    @Override
+    public Reservation findByRefReservationAndClientCin(String reference, String cin) {
+        return reservationDao.findByRefReservationAndClientCin(reference, cin);
+    }
+   
 
     /* @Override
     public Reservation modifierReservation(Reservation reservation) {
@@ -55,6 +60,8 @@ public class ReservationServiceImpl implements ReservationService {
         }
         return res;
     }*/
+    
+    
      @Override
     public int deleteReservation(String refReservation) {
         Reservation res=reservationService.findByRefReservation(refReservation);
@@ -93,6 +100,7 @@ public class ReservationServiceImpl implements ReservationService {
         res.setTypeVoyage(reservation.getTypeVoyage());
         res.setNbrPlace(reservation.getNbrPlace());
         res.setConfirmer(reservation.isConfirmer());
+        res.setClient(reservation.getClient());
         res.setIndice(indice+1);
         if (res.isConfirmer()) {//ajouter la condition de nbr des places restants
             res.setRefReservation("RR-"+(date.getYear()+1900)+"-"+(indice+1));
@@ -112,6 +120,9 @@ public class ReservationServiceImpl implements ReservationService {
     public void setReservationDao(ReservationDao reservationDao) {
         this.reservationDao = reservationDao;
     }
+
+
+    
 
 
 

@@ -19,7 +19,9 @@ import org.springframework.stereotype.Repository;
 public interface ReservationDao  extends JpaRepository<Reservation,Long>{
     public Reservation findByRefReservation(String refReservation);
     public List<Reservation> findByClientCin(String cin);
-   
+    public Reservation findByRefReservationAndClientCin(String reference,String cin);
+    
+    
    
     
     

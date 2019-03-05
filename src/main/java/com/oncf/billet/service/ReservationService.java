@@ -21,6 +21,7 @@ public interface ReservationService {
     public int findMaxIndice();
     //public Reservation modifierReservation(Reservation reservation);
     public int deleteReservation(String refReservation);
+     public Reservation findByRefReservationAndClientCin(String reference,String cin);
     
     
    

@@ -132,7 +132,9 @@ public class Client implements Serializable {
 
     @Override
     public String toString() {
-        return "com.billet.oncf.bean.Client[ id=" + id + " ]";
+        return "Client{" + "id=" + id + ", cin=" + cin + ", nom=" + nom + ", prenom=" + prenom + ", numTel=" + numTel + ", motDePasse=" + motDePasse + '}';
     }
+
+  
 
 }

@@ -69,6 +69,15 @@ public class ReservationRest {
      public int deleteReservation(@PathVariable String refReservation) {
         return reservationService.deleteReservation(refReservation);
     }
+    @GetMapping("/refReservation/{refReservation}/cin/{cin}")
+    public ReservationVo findByRefReservationAndCinClient(@PathVariable String reference, @PathVariable String cin) {
+        ReservationVoConvertor reservationVoConvertor=new ReservationVoConvertor();
+                    System.out.println("kokoooo ==> "+reference+""+cin);
+
+        Reservation res=reservationService.findByRefReservationAndClientCin(reference, cin);
+        return reservationVoConvertor.toVo(res);
+    }
+     
 
     public ReservationService getReservationService() {
         return reservationService;

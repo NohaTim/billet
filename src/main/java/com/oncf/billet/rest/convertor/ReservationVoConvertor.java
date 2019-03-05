@@ -34,6 +34,8 @@ public class ReservationVoConvertor implements AbstractConvertor<Reservation, Re
             res.setConfirmer(Boolean.valueOf(resVo.getConfirmer()).booleanValue());
             res.setIndice(NumberUtil.toInteger(resVo.getIndice()));
             res.setClient(new ClientVoConvertor().toItem(resVo.getClientvo()));
+            System.out.println("kokoooo ==> "+res.getClient());
+
             return res;
         }
         return null;
@@ -54,6 +56,7 @@ public class ReservationVoConvertor implements AbstractConvertor<Reservation, Re
             resVo.setDateReservation(DateUtil.formateDate(res.getDateReservation()));
             resVo.setConfirmer(Boolean.toString(res.isConfirmer()));
             resVo.setIndice(NumberUtil.toString(res.getIndice()));
+            System.out.println("kokoooo ==> "+res.getClient());
             resVo.setClientvo(new ClientVoConvertor().toVo(res.getClient()));
             return resVo;
         }
